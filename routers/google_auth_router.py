@@ -30,8 +30,6 @@ async def google_login():
 @google_auth_router.get("/callback", tags=["Google SSO"])
 async def google_callback(request: Request):
     user = await google_sso.verify_and_process(request)
-    print("user from google")
-    print(user)
     user_stored = await select_user_by_email(user.email)
     if not user_stored:
         user_to_add = UserCreate(
