@@ -24,6 +24,7 @@ async def select_user_by_email(email: str) -> Optional[User]:
     user = User(**document)
     return user
 
+
 async def select_user_by_id(user_id: str) -> Optional[User]:
     document = await users_collection.find_one({"_id": ObjectId(user_id)})
     if not document:

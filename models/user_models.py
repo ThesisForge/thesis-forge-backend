@@ -7,7 +7,7 @@ from models.common import MongoId
 
 class UserBase(BaseModel):
     first_name: str
-    last_name: str 
+    last_name: str
     email: EmailStr
     # password: Optional[str]
 
